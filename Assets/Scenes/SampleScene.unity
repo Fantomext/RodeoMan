@@ -864,11 +864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a46ce3a9baadc549aa43db35cc4da1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 8
   _jumpSpeed: 13
   _friction: 1
   _grounded: 0
   _maxSpeed: 10
+  _colliderTransform: {fileID: 386635811}
 --- !u!75 &1709332679
 ConstantForce:
   m_ObjectHideFlags: 0
@@ -877,7 +878,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709332675}
   m_Enabled: 1
-  m_Force: {x: 0, y: -10, z: 0}
+  m_Force: {x: 0, y: -20, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}

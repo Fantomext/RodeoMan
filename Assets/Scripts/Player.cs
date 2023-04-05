@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _grounded;
     [SerializeField] private float _maxSpeed;
 
+    [SerializeField] private Transform _colliderTransform;
+
 
     private void Start()
     {
@@ -18,6 +20,15 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S))
+        {
+            _colliderTransform.localScale = Vector3.Lerp(_colliderTransform.localScale, new Vector3(1f, 0.5f, 1f), Time.deltaTime * 15f);
+        }
+        else
+        {
+            _colliderTransform.localScale = Vector3.Lerp(_colliderTransform.localScale, new Vector3(1f, 1, 1f), Time.deltaTime * 15f);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_grounded)
@@ -34,7 +45,7 @@ public class Player : MonoBehaviour
 
         if (_grounded == false)
         {
-            speedMultiplier = 0.3f;
+            speedMultiplier = 0.1f;
         }
 
         if (rigidbody.velocity.x > _maxSpeed && Input.GetAxisRaw("Horizontal") > 0)
@@ -54,9 +65,6 @@ public class Player : MonoBehaviour
         }
         
     }
-
-    
-
     private void OnCollisionStay(Collision collision)
     {
         for (int i = 0; i < collision.contactCount; i++)
