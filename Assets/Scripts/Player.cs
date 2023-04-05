@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || _grounded == false)
         {
             _colliderTransform.localScale = Vector3.Lerp(_colliderTransform.localScale, new Vector3(1f, 0.5f, 1f), Time.deltaTime * 15f);
         }
