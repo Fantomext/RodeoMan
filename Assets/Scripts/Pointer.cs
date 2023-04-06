@@ -15,7 +15,7 @@ public class Pointer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Ray ray = cameraMain.ScreenPointToRay(Input.mousePosition);
 
