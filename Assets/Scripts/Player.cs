@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
                 rigidbody.AddForce(0f,_jumpSpeed,0f, ForceMode.VelocityChange);
             }
         }
+
+        
     }
 
     // Update is called once per frame
