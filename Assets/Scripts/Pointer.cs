@@ -7,6 +7,8 @@ public class Pointer : MonoBehaviour
     [SerializeField] Transform aim;
     [SerializeField] Camera cameraMain;
     [SerializeField] Transform _headTransform;
+    [SerializeField] Transform _lightSaberTransform;
+    [SerializeField] bool check;
 
     Plane plane;
     void Start()
@@ -21,11 +23,11 @@ public class Pointer : MonoBehaviour
 
         float distance;
 
-        Debug.DrawRay(ray.origin, ray.direction * 100f);
+    
        
         plane.Raycast(ray, out distance);
         Vector3 point = ray.GetPoint(distance);
-        Debug.Log(distance);
+
         aim.position = point;
 
         Vector3 toAim = aim.position - transform.position;
@@ -33,6 +35,17 @@ public class Pointer : MonoBehaviour
 
         _headTransform.rotation = Quaternion.Lerp(_headTransform.rotation , Quaternion.AngleAxis(45, new Vector3(toAim.y, -toAim.x, 0f)), Time.deltaTime * 15f);
 
-        Debug.Log(toAim);
+        _lightSaberTransform.localEulerAngles = new Vector3(0f, transform.localEulerAngles.y, 0f);
+        if (transform.rotation.y < 0)
+        {
+            _lightSaberTransform.localPosition = new Vector3(-1, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
+        }
+        else
+        {
+            _lightSaberTransform.localPosition = new Vector3(1, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
+        }
+
+
+
     }
 }

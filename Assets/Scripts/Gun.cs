@@ -11,7 +11,13 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _timer = 0;
     [SerializeField] private AudioSource _shotSound;
     [SerializeField] private GameObject _flash;
-   
+    [SerializeField] private Collider _ignoreColliders;
+    [SerializeField] private Gun _gun;
+
+    private void Start()
+    {
+        _gun = GetComponent<Gun>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,10 +31,12 @@ public class Gun : MonoBehaviour
                 _timer = 0;
                 GameObject newBullet = Instantiate(_bulletPrefab, _spawn.position, _spawn.rotation);
                 newBullet.GetComponent<Rigidbody>().velocity = _spawn.forward * _bulletSpeed;
+                Collider bulletCollider = newBullet.GetComponentInChildren<Collider>();
+                Physics.IgnoreCollision(bulletCollider, _ignoreColliders);
                 _shotSound.pitch = Random.Range(0.8f, 1.2f);
                 _shotSound.Play();
                 _flash.SetActive(true);
-                Invoke("HideFlash", 0.08f);
+                Invoke(nameof(HideFlash), 0.08f);
             }
         }
     }
@@ -36,5 +44,15 @@ public class Gun : MonoBehaviour
     public void HideFlash()
     {
         _flash.SetActive(false);
+    }
+
+    public void ShowGun()
+    {
+        _gun.gameObject.SetActive(true);
+    }
+
+    public void HideGun()
+    {
+        _gun.gameObject.SetActive(false);
     }
 }

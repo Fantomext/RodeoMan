@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody _rigidbody;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _friction;
     [SerializeField] private bool _grounded;
     [SerializeField] private float _maxSpeed;
+    private bool _isWalking = false;
+    private bool _isHitMelee = false;
+    private bool _isHitEnd = true;
 
     [SerializeField] private Transform _colliderTransform;
+    [SerializeField] private Gun _gun;
+    [SerializeField] private LightSaber _lightSaber;
 
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -33,11 +38,38 @@ public class Player : MonoBehaviour
         {
             if (_grounded)
             {
-                rigidbody.AddForce(0f,_jumpSpeed,0f, ForceMode.VelocityChange);
+                _rigidbody.AddForce(0f,_jumpSpeed,0f, ForceMode.VelocityChange);
             }
         }
 
-        
+        if (Input.GetKey(KeyCode.E) && _isHitEnd)
+        {
+            StartCoroutine(Hit());
+        }
+    }
+
+    IEnumerator Hit()
+    {
+        _isHitEnd = false;
+        HitStart();
+        yield return new WaitForSeconds(0.5f);
+        HitEnd();
+        yield return new WaitForSeconds(0.2f);
+        _isHitEnd = true;
+    }
+
+    public void HitStart()
+    {
+        _lightSaber.ShowLightSaber();
+        _gun.HideGun();
+        _isHitMelee = true;
+    }
+
+    public void HitEnd()
+    {
+        _lightSaber.HideLightSaber();
+        _gun.ShowGun();
+        _isHitMelee = false;
     }
 
     // Update is called once per frame
@@ -50,20 +82,29 @@ public class Player : MonoBehaviour
             speedMultiplier = 0.1f;
         }
 
-        if (rigidbody.velocity.x > _maxSpeed && Input.GetAxisRaw("Horizontal") > 0)
+        if (_rigidbody.velocity.x > _maxSpeed && Input.GetAxisRaw("Horizontal") > 0)
         {
             speedMultiplier = 0;
         }
-        if (rigidbody.velocity.x < -_maxSpeed && Input.GetAxisRaw("Horizontal") < 0)
+        if (_rigidbody.velocity.x < -_maxSpeed && Input.GetAxisRaw("Horizontal") < 0)
         {
             speedMultiplier = 0;
         }
 
-        rigidbody.AddForce(Input.GetAxisRaw("Horizontal") * _moveSpeed * speedMultiplier, 0f,0f, ForceMode.VelocityChange);
+        _rigidbody.AddForce(Input.GetAxisRaw("Horizontal") * _moveSpeed * speedMultiplier, 0f,0f, ForceMode.VelocityChange);    
 
         if (_grounded)
         {
-            rigidbody.AddForce(-rigidbody.velocity.x * _friction, 0f, 0f, ForceMode.VelocityChange);
+            _rigidbody.AddForce(-_rigidbody.velocity.x * _friction, 0f, 0f, ForceMode.VelocityChange);
+
+            if (_rigidbody.velocity.x != 0)
+            {
+                _isWalking = true;
+            }
+            else
+            {
+                _isWalking = false;
+            }
         }
         
     }
@@ -83,5 +124,15 @@ public class Player : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         _grounded = false;
+    }
+
+    public bool IsWalking()
+    {
+        return _isWalking;
+    }
+
+    public bool IsHit()
+    {
+        return _isHitMelee;
     }
 }
