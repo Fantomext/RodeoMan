@@ -25,5 +25,10 @@ public class Blink : MonoBehaviour
                 yield return null;
             }
         }
+        for (int i = 0; i < _renderer.Length; i++)
+        {
+            _renderer[i].material.SetColor("_EmissionColor", new Color(0f,0f,0f, 0f));
+        }
+        
     }
 }

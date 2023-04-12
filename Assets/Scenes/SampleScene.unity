@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.07278792, g: 0.06500278, b: 0.115628734, a: 1}
+  m_IndirectSpecularColor: {r: 0.072836906, g: 0.064985804, b: 0.11552515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2841,7 +2841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1522334802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3352,6 +3352,45 @@ MonoBehaviour:
   _healthUI: {fileID: 351906676}
   _damageScreen: {fileID: 1569699383}
   _blink: {fileID: 1709332681}
+  eventOnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 633575273}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1709332681}
+        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
+        m_MethodName: StartBlink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1569699383}
+        m_TargetAssemblyTypeName: DamageScreen, Assembly-CSharp
+        m_MethodName: StartEffectRed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1709332681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3366,7 +3405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer:
   - {fileID: 386635813}
-  - {fileID: 0}
+  - {fileID: 1943285385}
   amplitude: 22
 --- !u!1 &1731702826
 GameObject:
@@ -3841,6 +3880,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308bbd5cac278064d9eb2093f5bcec1d, type: 3}
+--- !u!23 &1943285385 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 308bbd5cac278064d9eb2093f5bcec1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1942868088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1985922496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,6 +4403,16 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1709332678}
+    - target: {fileID: 2853716525103776077, guid: 494966d9f798aba40b0ae2e20caac31d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.048748463
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853716525103776077, guid: 494966d9f798aba40b0ae2e20caac31d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.035800766
+      objectReference: {fileID: 0}
     - target: {fileID: 3124119212032633554, guid: 494966d9f798aba40b0ae2e20caac31d,
         type: 3}
       propertyPath: m_Name

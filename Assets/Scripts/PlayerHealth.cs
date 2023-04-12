@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private HealthUI _healthUI;
     [SerializeField] private DamageScreen _damageScreen;
     [SerializeField] private Blink _blink;
+
+    [SerializeField] private UnityEvent eventOnTakeDamage;
 
     private void Start()
     {
@@ -34,11 +37,13 @@ public class PlayerHealth : MonoBehaviour
                 Die();
             }
             _invulnerable = true;
-            _takeDamageSound.Play();
+            //_takeDamageSound.Play();
             _healthUI.DisplayHealth(_health);
-            _damageScreen.StartEffectRed();
-            _blink.StartBlink();
-            Invoke("StopInvulnerable", 1f);
+            //_damageScreen.StartEffectRed();
+            //_blink.StartBlink();
+            Invoke(nameof(StopInvulnerable), 1f);
+
+            eventOnTakeDamage.Invoke();
         }
         
     }
