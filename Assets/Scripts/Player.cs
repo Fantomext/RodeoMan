@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     public void HitStart()
     {
         _lightSaber.ShowLightSaber();
+        _lightSaber.PlaySoundHit();
         _gun.HideGun();
         _isHitMelee = true;
     }

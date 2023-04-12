@@ -14,6 +14,5 @@ public class MakeDamageOnCollision : MonoBehaviour
                 playerHealth.TakeDamage(_damageValue);
             }
         }
-        
     }
 }

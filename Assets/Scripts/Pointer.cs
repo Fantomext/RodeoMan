@@ -9,6 +9,7 @@ public class Pointer : MonoBehaviour
     [SerializeField] Transform _headTransform;
     [SerializeField] Transform _lightSaberTransform;
     [SerializeField] bool check;
+    [SerializeField] float offsetPositionSaber = 1f;
 
     Plane plane;
     void Start()
@@ -16,6 +17,7 @@ public class Pointer : MonoBehaviour
          plane = new Plane(new Vector3(0f, 0f, 1f), Vector3.zero);
     }
 
+   
     // Update is called once per frame
     void LateUpdate()
     {
@@ -35,14 +37,14 @@ public class Pointer : MonoBehaviour
 
         _headTransform.rotation = Quaternion.Lerp(_headTransform.rotation , Quaternion.AngleAxis(45, new Vector3(toAim.y, -toAim.x, 0f)), Time.deltaTime * 15f);
 
-        _lightSaberTransform.localEulerAngles = new Vector3(_lightSaberTransform.localEulerAngles.x, transform.localEulerAngles.y, _lightSaberTransform.localEulerAngles.z);
+        _lightSaberTransform.localEulerAngles = new Vector3(_lightSaberTransform.localEulerAngles.x, -transform.localEulerAngles.y, _lightSaberTransform.localEulerAngles.z);
         if (transform.rotation.y < 0)
         {
-            _lightSaberTransform.localPosition = new Vector3(-1, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
+            _lightSaberTransform.localPosition = new Vector3(-offsetPositionSaber, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
         }
         else
         {
-            _lightSaberTransform.localPosition = new Vector3(1, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
+            _lightSaberTransform.localPosition = new Vector3(offsetPositionSaber, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
         }
 
 
