@@ -14,7 +14,6 @@ public class LootHeal : MonoBehaviour
                 playerHealth.AddHealth(_healthValue);
                 Destroy(gameObject);
             }
-            
         }
     }
 }

@@ -23,5 +23,7 @@ public class TakeDamageOnTrigger : MonoBehaviour
             _enemyHealth.TakeDamage(bullet.DamageBullet());
         }
 
+
+
     }
 }
