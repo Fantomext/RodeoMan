@@ -48,30 +48,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator Hit()
-    {
-        _isHitEnd = false;
-        HitStart();
-        yield return new WaitForSeconds(0.5f);
-        HitEnd();
-        yield return new WaitForSeconds(0.2f);
-        _isHitEnd = true;
-    }
-
-    public void HitStart()
-    {
-        _lightSaber.ShowLightSaber();
-        _lightSaber.PlaySoundHit();
-        _gun.HideGun();
-        _isHitMelee = true;
-    }
-
-    public void HitEnd()
-    {
-        _lightSaber.HideLightSaber();
-        _gun.ShowGun();
-        _isHitMelee = false;
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -108,6 +84,31 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    IEnumerator Hit()
+    {
+        _isHitEnd = false;
+        HitStart();
+        yield return new WaitForSeconds(0.5f);
+        HitEnd();
+        yield return new WaitForSeconds(0.2f);
+        _isHitEnd = true;
+    }
+
+    public void HitStart()
+    {
+        _lightSaber.ShowLightSaber();
+        _lightSaber.PlaySoundHit();
+        _gun.HideGun();
+        _isHitMelee = true;
+    }
+
+    public void HitEnd()
+    {
+        _lightSaber.HideLightSaber();
+        _gun.ShowGun();
+        _isHitMelee = false;
     }
     private void OnCollisionStay(Collision collision)
     {

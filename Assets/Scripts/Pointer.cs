@@ -37,6 +37,11 @@ public class Pointer : MonoBehaviour
 
         _headTransform.rotation = Quaternion.Lerp(_headTransform.rotation , Quaternion.AngleAxis(45, new Vector3(toAim.y, -toAim.x, 0f)), Time.deltaTime * 15f);
 
+
+    }
+
+    private void Update()
+    {
         _lightSaberTransform.localEulerAngles = new Vector3(_lightSaberTransform.localEulerAngles.x, -transform.localEulerAngles.y, _lightSaberTransform.localEulerAngles.z);
         if (transform.rotation.y < 0)
         {
@@ -46,8 +51,5 @@ public class Pointer : MonoBehaviour
         {
             _lightSaberTransform.localPosition = new Vector3(offsetPositionSaber, _lightSaberTransform.localPosition.y, _lightSaberTransform.localPosition.z);
         }
-
-
-
     }
 }

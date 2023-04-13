@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3311374}
   - component: {fileID: 2389842}
   - component: {fileID: 11464632}
+  - component: {fileID: 9091797973921197107}
   m_Layer: 0
   m_Name: LineStrip-LightSaber
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 138530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.264, y: 0.03542564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,15 +99,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_templateMaterial: {fileID: 2100000, guid: 93650598a03e42b43b19fe787c484e93, type: 2}
   m_doNotOverwriteTemplateMaterialProperties: 0
-  m_lineColor: {r: 0, g: 1, b: 0.07363987, a: 1}
-  m_lineWidth: 20
-  m_lightSaberFactor: 0.8
+  m_lineColor: {r: 0.022694906, g: 0.4453284, b: 0.9622642, a: 1}
+  m_lineWidth: 3.33
+  m_lightSaberFactor: 0.763
   m_lineVertices:
-  - {x: 50, y: 0, z: 0}
-  - {x: 100, y: 0, z: 0}
-  - {x: 150, y: 50, z: 0}
-  - {x: 150, y: 100, z: 0}
-  - {x: 100, y: 150, z: 0}
-  - {x: 50, y: 150, z: 0}
-  - {x: 0, y: 100, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 10, z: 0}
+  - {x: 0, y: 20, z: 0}
+  - {x: 0, y: 30, z: 0}
+--- !u!65 &9091797973921197107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0164037, y: 33.329998, z: 0.28829122}
+  m_Center: {x: 0.062255245, y: 15, z: 0.005095154}

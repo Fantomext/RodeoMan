@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    private const string IS_WALKING = "isWalking";
+    private const string isWalking = "isWalking";
 
     private Animator _animator;
     [SerializeField] private Player _player;
@@ -16,7 +16,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool(IS_WALKING, _player.IsWalking());
+        _animator.SetBool(isWalking, _player.IsWalking());
     }
 
 

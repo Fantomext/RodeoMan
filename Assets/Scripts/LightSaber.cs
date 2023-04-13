@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightSaber : MonoBehaviour
 {
-    [SerializeField] LightSaber _lightSaber;
+    LightSaber _lightSaber;
     [SerializeField] int _damageHit = 1;
     [SerializeField] AudioSource audioSource;
     private void Awake()
