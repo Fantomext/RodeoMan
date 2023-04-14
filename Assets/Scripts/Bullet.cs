@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private GameObject _effectPrefab;
     [SerializeField] private int _damage = 1;
+    [SerializeField] private Collider[] _ignoreColliders;
  
     void Start()
     {

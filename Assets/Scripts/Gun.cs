@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _timer = 0;
     [SerializeField] private AudioSource _shotSound;
     [SerializeField] private GameObject _flash;
-    [SerializeField] private Collider _ignoreColliders;
+    [SerializeField] private Collider[] _ignoreColliders;
     [SerializeField] private Gun _gun;
 
     private void Start()
@@ -32,7 +32,10 @@ public class Gun : MonoBehaviour
                 GameObject newBullet = Instantiate(_bulletPrefab, _spawn.position, _spawn.rotation);
                 newBullet.GetComponent<Rigidbody>().velocity = _spawn.forward * _bulletSpeed;
                 Collider bulletCollider = newBullet.GetComponentInChildren<Collider>();
-                Physics.IgnoreCollision(bulletCollider, _ignoreColliders);
+                for (int i = 0; i < _ignoreColliders.Length; i++)
+                {
+                        Physics.IgnoreCollision(bulletCollider, _ignoreColliders[i]);
+                }
                 _shotSound.pitch = Random.Range(0.8f, 1.2f);
                 _shotSound.Play();
                 _flash.SetActive(true);

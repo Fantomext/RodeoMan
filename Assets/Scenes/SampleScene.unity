@@ -1769,7 +1769,9 @@ MonoBehaviour:
   _timer: 0
   _shotSound: {fileID: 1321321644}
   _flash: {fileID: 797933072}
-  _ignoreColliders: {fileID: 386635812}
+  _ignoreColliders:
+  - {fileID: 801600286}
+  - {fileID: 386635812}
   _gun: {fileID: 0}
 --- !u!1 &797933072 stripped
 GameObject:
@@ -1782,6 +1784,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b110e33d9f5a164ca18c2d499bdc886,
     type: 3}
   m_PrefabInstance: {fileID: 200354225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &801600286 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 183462906, guid: 3d425c0b8360d5a4cb07599cc3cbdccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7722442362368553716}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
