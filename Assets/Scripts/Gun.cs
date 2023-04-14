@@ -34,7 +34,10 @@ public class Gun : MonoBehaviour
                 Collider bulletCollider = newBullet.GetComponentInChildren<Collider>();
                 for (int i = 0; i < _ignoreColliders.Length; i++)
                 {
+                    if (_ignoreColliders[i] != null)
+                    {
                         Physics.IgnoreCollision(bulletCollider, _ignoreColliders[i]);
+                    }
                 }
                 _shotSound.pitch = Random.Range(0.8f, 1.2f);
                 _shotSound.Play();
