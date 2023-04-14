@@ -1771,6 +1771,7 @@ MonoBehaviour:
   _flash: {fileID: 797933072}
   _ignoreColliders:
   - {fileID: 386635812}
+  - {fileID: 801600286}
   _gun: {fileID: 0}
 --- !u!1 &797933072 stripped
 GameObject:
@@ -1783,6 +1784,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b110e33d9f5a164ca18c2d499bdc886,
     type: 3}
   m_PrefabInstance: {fileID: 200354225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &801600286 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 183462906, guid: 3d425c0b8360d5a4cb07599cc3cbdccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7722442362368553716}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
@@ -4391,7 +4398,7 @@ PrefabInstance:
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.51959735
+      value: 0.585922
       objectReference: {fileID: 0}
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
@@ -4401,7 +4408,7 @@ PrefabInstance:
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8544113
+      value: -0.8103675
       objectReference: {fileID: 0}
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
@@ -4416,7 +4423,7 @@ PrefabInstance:
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -117.39
+      value: -108.264
       objectReference: {fileID: 0}
     - target: {fileID: 7564199914499772106, guid: c3fe003fc8f9fe1419bcbf54ea7d72bc,
         type: 3}
