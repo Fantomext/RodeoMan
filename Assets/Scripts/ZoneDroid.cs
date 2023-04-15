@@ -22,9 +22,6 @@ public class ZoneDroid : MonoBehaviour
         Vector3 toPlayer = (_playerTransform.position - transform.position).normalized;
 
         Vector3 force = _rigibody.mass * (toPlayer * _speed - _rigibody.velocity) / _timeToReachSpeed;
-        transform.rotation = Quaternion.LookRotation(toPlayer);
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(toPlayer), 15f);
 
         _rigibody.AddForce(force);
     }
