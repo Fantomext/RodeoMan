@@ -8,12 +8,16 @@ public class MakeDamageOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
+        if (other.attachedRigidbody)
         {
-            if (other.gameObject.GetComponentInParent<LightSaber>() == null)
+            if (other.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
-                playerHealth.TakeDamage(_damageValue);
+                if (other.gameObject.GetComponentInParent<LightSaber>() == null)
+                {
+                    playerHealth.TakeDamage(_damageValue);
+                }
             }
         }
+        
     }
 }

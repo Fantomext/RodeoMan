@@ -6,6 +6,7 @@ public class TakeDamageOnTrigger : MonoBehaviour
 {
 
     [SerializeField] private EnemyHealth _enemyHealth;
+    [SerializeField] private bool _dieOnAnyCollision = false;
 
     
     private void OnTriggerEnter(Collider other)
@@ -23,7 +24,12 @@ public class TakeDamageOnTrigger : MonoBehaviour
             _enemyHealth.TakeDamage(bullet.DamageBullet());
         }
 
-
-
+        if (_dieOnAnyCollision)
+        {
+            if (other.isTrigger == false)
+            {
+                _enemyHealth.TakeDamage(10000);
+            }
+        }
     }
 }

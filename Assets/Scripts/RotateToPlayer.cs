@@ -6,6 +6,7 @@ public class RotateToPlayer : MonoBehaviour
 {
     private Transform _player;
     [SerializeField] private float _rotationSpeed = 5f;
+    [SerializeField] private float _angleRotate = 105f;
     void Start()
     {
         _player = FindObjectOfType<Player>().transform;
@@ -16,6 +17,8 @@ public class RotateToPlayer : MonoBehaviour
     {
         Vector3 toPlayer = _player.position - transform.position;
         toPlayer.y = 0;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(toPlayer), Time.deltaTime * _rotationSpeed);
+        Quaternion rotateToplayer = Quaternion.LookRotation(toPlayer);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(_angleRotate, rotateToplayer.ToEulerAngles()), Time.deltaTime * _rotationSpeed);
+        
     }
 }
