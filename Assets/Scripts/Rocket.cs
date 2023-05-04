@@ -17,8 +17,6 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-
         Vector3 toPlayer = _player.position - transform.position;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(toPlayer, Vector3.forward), Time.deltaTime * _rotateSpeed);

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroidB1Animator : MonoBehaviour
+public class SetTriggerEveryNSeconds : MonoBehaviour
 {
-    private const string _attack = "Attack";
+    [SerializeField] private string _attack = "Attack";
 
     [SerializeField] private Animator _animator;
     [SerializeField] private float _attackPeriod = 7f;

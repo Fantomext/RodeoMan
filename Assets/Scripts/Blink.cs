@@ -5,6 +5,7 @@ using UnityEngine;
 public class Blink : MonoBehaviour
 {
     [SerializeField] private Renderer[] _renderer;
+    [SerializeField] private Material[] _materials;
 
     [SerializeField] private float amplitude = 22;
     
@@ -12,6 +13,7 @@ public class Blink : MonoBehaviour
     public void StartBlink()
     {
         StartCoroutine(BlinkEffect());
+        //StartCoroutine(BlinkEffectMat());
     }
 
     public IEnumerator BlinkEffect()
@@ -33,5 +35,23 @@ public class Blink : MonoBehaviour
             _renderer[i].material.SetColor("_EmissionColor", new Color(0f,0f,0f, 0f));
         }
         
+    }
+
+    public IEnumerator BlinkEffectMat()
+    {
+
+        for (float t = 0; t < 0.5f; t += Time.deltaTime)
+        {
+            for (int i = 0; i < _materials.Length; i++)
+            {
+                    _materials[i].SetColor("_EmissionColor", new Color(Mathf.Sin(t * amplitude) * 0.5f + 0.5f, 0, 0, 0));
+                    yield return null;
+            }
+        }
+        for (int i = 0; i < _renderer.Length; i++)
+        {
+            _materials[i].SetColor("_EmissionColor", new Color(0f, 0f, 0f, 0f));
+        }
+
     }
 }
