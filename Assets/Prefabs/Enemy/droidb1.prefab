@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 6097121790554657397}
   - component: {fileID: 6097121789490653517}
   - component: {fileID: 6097121789924309131}
+  - component: {fileID: -8126506802721205740}
   m_Layer: 0
   m_Name: droidb1
   m_TagString: Untagged
@@ -640,8 +641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer:
   - {fileID: 4699540340066321188}
-  _materials: []
   amplitude: 22
+  timeBlink: 0.1
 --- !u!114 &6097121789924309131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +657,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationSpeed: 5
   _angleRotate: 105
+--- !u!114 &-8126506802721205740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976657462645649365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef74ee5918ede64ba05dbe1ca51d0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceToActivate: 10
+  _activator: {fileID: 0}
 --- !u!1 &4419483561466151506
 GameObject:
   m_ObjectHideFlags: 0

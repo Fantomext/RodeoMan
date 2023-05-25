@@ -24,8 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         _healthUI.Setup(_maxHealth);
         _healthUI.DisplayHealth(_health);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+       
     }
 
     public void TakeDamage(int damageValue)
@@ -35,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
             _health -= damageValue;
             if (_health <= 0)
             {
+                _health = 0;
                 Die();
             }
             _invulnerable = true;

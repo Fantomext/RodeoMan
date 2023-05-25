@@ -8,8 +8,6 @@ public class LightSaberAnim : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Player _player;
 
-    
-
     private void Update()
     {
         _animator.SetBool(IS_HITMELEE, _player.IsHit());

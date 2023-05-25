@@ -20,20 +20,24 @@ public class Blink : MonoBehaviour
 
         for (float t = 0; t < timeBlink; t += Time.deltaTime)
         {
-            for (int i = 0; i < _renderer.Length; i++)
-            {
-                for (int m = 0; m < _renderer[i].materials.Length; m++)
-                {
-                    _renderer[i].materials[m].SetColor("_EmissionColor", new Color(Mathf.Sin(t * amplitude) * 0.5f + 0.5f, 0, 0, 0));
-                    yield return null;
-                }
-            }
+            SetColor(new Color(Mathf.Sin(t * amplitude) * 0.5f + 0.5f, 0, 0, 0));
+            yield return null;
         }
+        
+        SetColor(Color.clear);
+
+    }
+    
+    public void SetColor(Color color)
+    {
         for (int i = 0; i < _renderer.Length; i++)
         {
-            _renderer[i].material.SetColor("_EmissionColor", new Color(0f, 0f, 0f, 0f));
+            for (int m = 0; m < _renderer[i].materials.Length; m++)
+            {
+                _renderer[i].materials[m].SetColor("_EmissionColor", color);
+             
+            }
         }
-
     }
 
 }

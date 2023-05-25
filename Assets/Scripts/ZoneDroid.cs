@@ -18,7 +18,7 @@ public class ZoneDroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
         Vector3 toPlayer = (_playerTransform.position - transform.position).normalized;
 
         Vector3 force = _rigibody.mass * (toPlayer * _speed - _rigibody.velocity) / _timeToReachSpeed;

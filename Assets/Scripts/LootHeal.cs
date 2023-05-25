@@ -9,7 +9,17 @@ public class LootHeal : MonoBehaviour
     {
         if (other.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
         {
+            Debug.Log(other.attachedRigidbody);
             if (other.gameObject.GetComponentInParent<LightSaber>() == null)
+            {
+                
+            }
+            if (other.attachedRigidbody.TryGetComponent<Bullet>(out var bullet))
+            {
+                Debug.Log("true");
+                Physics.IgnoreCollision(other, bullet.GetComponent<Collider>());
+            }
+            else
             {
                 playerHealth.AddHealth(_healthValue);
                 Destroy(gameObject);

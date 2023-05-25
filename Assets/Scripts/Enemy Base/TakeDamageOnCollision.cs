@@ -14,8 +14,10 @@ public class TakeDamageOnCollision : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent<LightSaber>(out var lightSaber))
+
+        if (collision.gameObject.GetComponentInParent<LightSaber>() != null)
         {
+            LightSaber lightSaber = collision.gameObject.GetComponentInParent<LightSaber>();
             _enemyHealth.TakeDamage(lightSaber.DamageSaber());
         }
         if (collision.rigidbody)

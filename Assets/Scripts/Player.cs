@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            _colliderTransform.localScale = Vector3.Lerp(_colliderTransform.localScale, new Vector3(1f, 1, 1f), Time.deltaTime * 15f);
+            _colliderTransform.localScale = Vector3.Lerp(_colliderTransform.localScale, Vector3.one, Time.deltaTime * 15f);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

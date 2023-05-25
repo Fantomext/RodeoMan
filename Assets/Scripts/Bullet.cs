@@ -25,6 +25,6 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Instantiate(_effectPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        
     }
 }

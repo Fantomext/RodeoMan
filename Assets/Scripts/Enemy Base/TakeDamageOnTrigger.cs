@@ -11,7 +11,6 @@ public class TakeDamageOnTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-      
         if (other.gameObject.GetComponentInParent<LightSaber>() != null)
         {
             LightSaber lightSaber = other.gameObject.GetComponentInParent<LightSaber>();
