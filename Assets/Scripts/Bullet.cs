@@ -24,7 +24,10 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(_effectPrefab, transform.position, Quaternion.identity);
-        
+        if (other.gameObject.GetComponent<LootHeal>() == null)
+        {
+            Instantiate(_effectPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
