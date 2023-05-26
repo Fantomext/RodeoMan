@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform _colliderTransform;
     [SerializeField] private Gun _gun;
+    [SerializeField] private PlayerArmory _playerArmory;
     [SerializeField] private LightSaber _lightSaber;
 
 
@@ -88,6 +89,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Hit()
     {
+        SelectedGun();
         _isHitEnd = false;
         HitStart();
         yield return new WaitForSeconds(0.5f);
@@ -100,15 +102,20 @@ public class Player : MonoBehaviour
     {
         _lightSaber.ShowLightSaber();
         _lightSaber.PlaySoundHit();
-        _gun.HideGun();
+        _gun.Deactivate();
         _isHitMelee = true;
     }
 
     public void HitEnd()
     {
         _lightSaber.HideLightSaber();
-        _gun.ShowGun();
+        _gun.Activate();
         _isHitMelee = false;
+    }
+
+    public void SelectedGun()
+    {
+        _gun = _playerArmory.CurrentGunReturn(); 
     }
     private void OnCollisionStay(Collision collision)
     {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ActivateByDistance : MonoBehaviour
@@ -52,8 +54,12 @@ public class ActivateByDistance : MonoBehaviour
         _activator.DeleteObjectToActivate(this);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.DrawWireDisc(transform.position, Vector3.forward, _distanceToActivate);
     }
+
+#endif
+
 }

@@ -26,8 +26,12 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.GetComponent<LootHeal>() == null)
         {
-            Instantiate(_effectPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (other.gameObject.GetComponent<LootBullets>() == null)
+            {
+                Instantiate(_effectPrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            
         }
     }
 }
