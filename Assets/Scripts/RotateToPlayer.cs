@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +18,9 @@ public class RotateToPlayer : MonoBehaviour
         Vector3 toPlayer = _player.position - transform.position;
         toPlayer.y = 0;
         Quaternion rotateToplayer = Quaternion.LookRotation(toPlayer);
+        //В прошлой домашке вы исправляли этот код, но при использование Quaternion.Euler(toPlayer), то он теряет правильный угол поворота
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(_angleRotate, rotateToplayer.ToEulerAngles()), Time.deltaTime * _rotationSpeed);
         
+
     }
 }

@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &429904543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429904544}
+  - component: {fileID: 429904545}
+  m_Layer: 0
+  m_Name: DieEffectCreator (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &429904544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429904543}
+  m_LocalRotation: {x: -0, y: 0.26976863, z: -0, w: 0.96292514}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
+  m_LocalScale: {x: 1.4923356, y: 1.0966725, z: 1.4923356}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1113232592590688235}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429904545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429904543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4c67cf7a55c914ca334aee86a7fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3346148009216257670, guid: 4b7874b9cd1de4f4194cc61ffba00d39, type: 3}
+  _spawn: {fileID: 429904544}
 --- !u!1 &1113232592590688234
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,13 +76,14 @@ Transform:
   m_GameObject: {fileID: 1113232592590688234}
   m_LocalRotation: {x: 0, y: -0.87164617, z: 0, w: 0.4901357}
   m_LocalPosition: {x: 13.561882, y: 8.51, z: 0}
-  m_LocalScale: {x: 1.47, y: 1.47, z: 1.47}
+  m_LocalScale: {x: 1.4699999, y: 1.47, z: 1.4699999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6320785763922407756}
   - {fileID: 1113232593214957651}
   - {fileID: 1113232594124697040}
   - {fileID: 8877297885146724826}
+  - {fileID: 429904544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -121.301, z: 0}
@@ -67,10 +114,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad738e11d9442d4e8cf4475cb5713dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 10
   _eventOnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 429904545}
+        m_TargetAssemblyTypeName: PrefabCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _eventOnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -160,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef74ee5918ede64ba05dbe1ca51d0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceToActivate: 15
+  _distanceToActivate: 10
   _activator: {fileID: 0}
 --- !u!1 &1113232593214957650
 GameObject:

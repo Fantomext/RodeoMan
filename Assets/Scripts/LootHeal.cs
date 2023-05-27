@@ -9,11 +9,12 @@ public class LootHeal : MonoBehaviour
     {
         if (other.attachedRigidbody.TryGetComponent<PlayerHealth>(out var playerHealth))
         {
-            if (other.gameObject.GetComponentInParent<LightSaber>() == null)
+            if (playerHealth.HealthState() < playerHealth.MaxHelathState())
             {
                 playerHealth.AddHealth(_healthValue);
                 Destroy(gameObject);
             }
+                    
         }
     }
 }

@@ -27,6 +27,14 @@ public class PlayerHealth : MonoBehaviour
        
     }
 
+    public int MaxHelathState()
+    {
+        return _maxHealth;
+    }
+    public int HealthState()
+    {
+        return _health;
+    }
     public void TakeDamage(int damageValue)
     {
         if (_invulnerable == false)

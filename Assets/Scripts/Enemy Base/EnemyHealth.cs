@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,17 +9,19 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damageValue)
     {
 
-        _eventOnTakeDamage.Invoke();
+        
         _health -= damageValue;
-        if (_health == 1)
-        {
-            _eventOnDie.Invoke();
-        }
+
         if (_health <= 0)
         {
+            _eventOnDie.Invoke();
             Die();
         }
-        
+        else
+        {
+            _eventOnTakeDamage.Invoke();
+        }
+
     }
 
     public void Die()

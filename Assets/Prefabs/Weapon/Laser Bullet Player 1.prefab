@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effectPrefab: {fileID: 1332399844379766, guid: bf6125dae845c864f88be14aa8109eb9,
     type: 3}
-  _damage: 1
+  _damage: 2
   _ignoreColliders:
   - {fileID: 0}
 --- !u!1001 &1053370730257611699
