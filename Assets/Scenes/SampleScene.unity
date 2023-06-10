@@ -11238,7 +11238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74200910647e1084a9e92c2af6e51655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPosition: {fileID: 0}
+  _spawnPosition: {fileID: 304354374}
   _player: {fileID: 1709332680}
 --- !u!65 &971521945
 BoxCollider:
@@ -20429,7 +20429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74200910647e1084a9e92c2af6e51655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPosition: {fileID: 0}
+  _spawnPosition: {fileID: 1955084146}
   _player: {fileID: 1709332680}
 --- !u!65 &1644300066
 BoxCollider:
