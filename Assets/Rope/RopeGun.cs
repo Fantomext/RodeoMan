@@ -54,7 +54,6 @@ public class RopeGun : MonoBehaviour
         {
             if (_currentRopeState == RopeState.Active)
             {
-                Debug.Log("da");
                 if (_player.IsGrounded() == false)
                 {
                     _player.Jump();

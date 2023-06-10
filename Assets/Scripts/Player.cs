@@ -54,7 +54,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(_jumpFrameCounter);
         float speedMultiplier = 1f;
 
         if (_grounded == false)
