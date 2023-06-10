@@ -1,0 +1,219 @@
+# Blender MTL File: 'JoeEl.blend'
+# Material Count: 18
+
+newmtl Antenna
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Model\\Textures\\House\\Antenna_baseColor.png
+map_Ns Model\\Textures\\House\\Antenna_roughness.png
+refl Model\\Textures\\House\\Antenna_metallic.png
+
+newmtl Arch
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.072057 0.408692
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\Arch_normal.png
+map_Kd Model\\Textures\\House\\Arch_baseColor.png
+map_Ns Model\\Textures\\House\\Arch_roughness.png
+refl Model\\Textures\\House\\Arch_metallic.png
+
+newmtl Box
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\Box_normal.png
+map_Kd Model\\Textures\\House\\Box_baseColor.png
+map_Ns Model\\Textures\\House\\House_baseColor.png
+refl Model\\Textures\\House\\Box_metallic.png
+
+newmtl Case
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\Case_normal.png
+map_Kd Model\\Textures\\House\\Case_baseColor.png
+map_Ns Model\\Textures\\House\\Case_roughness.png
+refl Model\\Textures\\House\\Case_metallic.png
+
+newmtl Diny
+Ns 54.223142
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.405455 0.405455 0.405455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2.000000 1.500000 1.000000 Model\\Textures\\House\\D1.jpg
+
+newmtl Door
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.317863 0.029206 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\Door_normal.png
+map_Kd Model\\Textures\\House\\Door_baseColor.png
+map_Ns Model\\Textures\\House\\Door_roughness.png
+refl Model\\Textures\\House\\Door_metallic.png
+
+newmtl House
+Ns 287.764956
+Ka 1.000000 1.000000 1.000000
+Kd 0.740456 0.800000 0.263477
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Model\\Textures\\House\\House_baseColor.png
+map_Ns Model\\Textures\\House\\House_roughness.png
+
+newmtl MainHouse
+Ns 42.131913
+Ka 1.000000 1.000000 1.000000
+Kd 0.258562 0.020275 0.043396
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Model\\Textures\\House\\MainHouse_baseColor.png
+map_Ns Model\\Textures\\House\\MainHouse_roughness.png
+
+newmtl Material.002
+Ns 104.040020
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Meshok
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.096364 0.096364 0.096364
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Plane
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Seeds
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.096364 0.096364 0.096364
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SomeThing
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.111764 0.111764 0.111764
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\SomeThing_normal.png
+map_Kd Model\\Textures\\House\\SomeThing_baseColor.png
+map_Ns Model\\Textures\\House\\SomeThing_roughness.png
+
+newmtl awning
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\awning_normal.png
+map_Kd Model\\Textures\\House\\awning_baseColor.png
+map_Ns Model\\Textures\\House\\awning_roughness.png
+
+newmtl awning1
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\awning1_normal.png
+map_Kd Model\\Textures\\House\\awning1_baseColor.png
+map_Ns Model\\Textures\\House\\awning1_roughness.png
+
+newmtl barrel
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Model\\Textures\\House\\barrel_normal.png
+map_Kd Model\\Textures\\House\\barrel_baseColor.png
+map_Ns Model\\Textures\\House\\Case_baseColor.png
+refl Model\\Textures\\House\\barrel_metallic.png
+
+newmtl beam
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl lamp
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerArmory _playerArmory;
     [SerializeField] private LightSaber _lightSaber;
 
+    private int _jumpFrameCounter;
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
         {
             if (_grounded)
             {
-                _rigidbody.AddForce(0f,_jumpSpeed,0f, ForceMode.VelocityChange);
+                Jump();
             }
         }
 
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(_jumpFrameCounter);
         float speedMultiplier = 1f;
 
         if (_grounded == false)
@@ -75,6 +77,8 @@ public class Player : MonoBehaviour
         {
             _rigidbody.AddForce(-_rigidbody.velocity.x * _friction, 0f, 0f, ForceMode.VelocityChange);
 
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 15f);
+
             if (_rigidbody.velocity.x != 0)
             {
                 _isWalking = true;
@@ -84,7 +88,15 @@ public class Player : MonoBehaviour
                 _isWalking = false;
             }
         }
-        
+
+        _jumpFrameCounter += 1;
+
+        if (_jumpFrameCounter == 2)
+        {
+            _rigidbody.freezeRotation = false;
+            _rigidbody.AddRelativeTorque(0f, 0f, 6.5f, ForceMode.VelocityChange);
+
+        }
     }
 
     IEnumerator Hit()
@@ -125,6 +137,7 @@ public class Player : MonoBehaviour
             if (angle < 45f)
             {
                 _grounded = true;
+                _rigidbody.freezeRotation = true;
             }
         }
         
@@ -135,6 +148,10 @@ public class Player : MonoBehaviour
         _grounded = false;
     }
 
+    public bool IsGrounded()
+    {
+        return _grounded;
+    }
     public bool IsWalking()
     {
         return _isWalking;
@@ -143,5 +160,11 @@ public class Player : MonoBehaviour
     public bool IsHit()
     {
         return _isHitMelee;
+    }
+
+    public void Jump()
+    {
+        _rigidbody.AddForce(0f, _jumpSpeed, 0f, ForceMode.VelocityChange);
+        _jumpFrameCounter = 0;
     }
 }

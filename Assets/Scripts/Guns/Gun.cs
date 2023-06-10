@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject _flash;
     [SerializeField] private Collider[] _ignoreColliders;
     [SerializeField] private Gun _gun;
+    [SerializeField] private ParticleSystem shotEffect;
 
     private void Start()
     {
@@ -49,6 +50,7 @@ public class Gun : MonoBehaviour
         _shotSound.pitch = Random.Range(0.8f, 1.2f);
         _shotSound.Play();
         _flash.SetActive(true);
+        shotEffect.Play();
         Invoke(nameof(HideFlash), 0.08f);
     }
 

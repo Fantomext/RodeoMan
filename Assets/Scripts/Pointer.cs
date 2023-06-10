@@ -10,6 +10,7 @@ public class Pointer : MonoBehaviour
     [SerializeField] Transform _lightSaberTransform;
     [SerializeField] bool check;
     [SerializeField] float offsetPositionSaber = 1f;
+    [SerializeField] Player _player;
 
     Plane plane;
     void Start()
@@ -35,8 +36,11 @@ public class Pointer : MonoBehaviour
         Vector3 toAim = aim.position - transform.position;
         transform.rotation = Quaternion.LookRotation(toAim);
 
-        _headTransform.rotation = Quaternion.Lerp(_headTransform.rotation , Quaternion.AngleAxis(45, new Vector3(toAim.y, -toAim.x, 0f)), Time.deltaTime * 15f);
-
+        if (_player.IsGrounded() == true)
+        {
+            _headTransform.rotation = Quaternion.Lerp(_headTransform.rotation, Quaternion.AngleAxis(45, new Vector3(toAim.y, -toAim.x, 0f)), Time.deltaTime * 15f);
+        }
+        
 
     }
 

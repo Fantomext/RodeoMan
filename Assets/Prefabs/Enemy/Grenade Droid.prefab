@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attack: Attack
   _animator: {fileID: 1295871511}
-  _attackPeriod: 3
+  _attackPeriod: 2
 --- !u!114 &1295871512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad738e11d9442d4e8cf4475cb5713dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 8
+  _health: 10
   _eventOnDie:
     m_PersistentCalls:
       m_Calls:

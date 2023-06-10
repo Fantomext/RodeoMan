@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private UnityEvent eventOnTakeDamage;
     [SerializeField] private UnityEvent eventOnAddHealth;
+    [SerializeField] private UnityEvent eventOnDie;
 
     private void Start()
     {
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
             if (_health <= 0)
             {
                 _health = 0;
-                Die();
+                eventOnDie.Invoke();
             }
             _invulnerable = true;
             //_takeDamageSound.Play();
@@ -73,11 +74,6 @@ public class PlayerHealth : MonoBehaviour
         //_healSounde.Play();
         //_damageScreen.StartEffectBlue();
         eventOnAddHealth.Invoke();
-    }
-
-    void Die()
-    {
-        Debug.Log("You lose");
     }
    
 }
