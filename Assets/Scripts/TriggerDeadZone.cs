@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerDeadZone : MonoBehaviour
 {
-    [SerializeField] Transform spawnPosition;
+    [SerializeField] Transform _spawnPosition;
     [SerializeField] PlayerHealth _player;
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +12,7 @@ public class TriggerDeadZone : MonoBehaviour
         {
             if (other.attachedRigidbody.GetComponent<Player>())
             {
-                _player.transform.position = new Vector3(spawnPosition.position.x, spawnPosition.position.y, 0f);
+                _player.transform.position = new Vector3(_spawnPosition.position.x, _spawnPosition.position.y, 0f);
                 _player.TakeDamage(1);
             }
         }

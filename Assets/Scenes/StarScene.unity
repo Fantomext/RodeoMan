@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f945820b1bab46bd184f080a56e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 1262205318}
+  _music: {fileID: 1262205318}
 --- !u!4 &322748484
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.236
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4612,8 +4612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986538b81ce229547bf6efa31547d5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuButton: {fileID: 2115532130}
-  MenuWindow: {fileID: 1885088864}
+  _menuButton: {fileID: 2115532130}
+  _menuWindow: {fileID: 1885088864}
   _comonentsToDisable:
   - {fileID: 1709332678}
   - {fileID: 126740142}
@@ -4699,7 +4699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47d95ffd255794ea7e0d1ea18971c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageImage: {fileID: 1522334804}
+  _damageImage: {fileID: 1522334804}
 --- !u!114 &1522334804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4927,7 +4927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47d95ffd255794ea7e0d1ea18971c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageImage: {fileID: 1569699384}
+  _damageImage: {fileID: 1569699384}
 --- !u!114 &1569699384
 MonoBehaviour:
   m_ObjectHideFlags: 0

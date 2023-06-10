@@ -6,8 +6,8 @@ public class Blink : MonoBehaviour
 {
     [SerializeField] private Renderer[] _renderer;
 
-    [SerializeField] private float amplitude = 22f;
-    [SerializeField] private float timeBlink = 0.1f;
+    [SerializeField] private float _amplitude = 22f;
+    [SerializeField] private float _timeBlink = 0.1f;
 
 
     public void StartBlink()
@@ -18,9 +18,9 @@ public class Blink : MonoBehaviour
     public IEnumerator BlinkEffect()
     {
 
-        for (float t = 0; t < timeBlink; t += Time.deltaTime)
+        for (float t = 0; t < _timeBlink; t += Time.deltaTime)
         {
-            SetColor(new Color(Mathf.Sin(t * amplitude) * 0.5f + 0.5f, 0, 0, 0));
+            SetColor(new Color(Mathf.Sin(t * _amplitude) * 0.5f + 0.5f, 0, 0, 0));
             yield return null;
         }
         

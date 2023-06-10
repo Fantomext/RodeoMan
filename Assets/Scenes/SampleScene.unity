@@ -4604,7 +4604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f945820b1bab46bd184f080a56e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 1262205318}
+  _music: {fileID: 0}
 --- !u!4 &322748484
 Transform:
   m_ObjectHideFlags: 0
@@ -11238,7 +11238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74200910647e1084a9e92c2af6e51655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 304354374}
+  _spawnPosition: {fileID: 0}
   _player: {fileID: 1709332680}
 --- !u!65 &971521945
 BoxCollider:
@@ -18012,8 +18012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986538b81ce229547bf6efa31547d5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuButton: {fileID: 2115532130}
-  MenuWindow: {fileID: 1885088864}
+  _menuButton: {fileID: 0}
+  _menuWindow: {fileID: 0}
   _comonentsToDisable:
   - {fileID: 1709332678}
   - {fileID: 126740142}
@@ -18960,7 +18960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47d95ffd255794ea7e0d1ea18971c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageImage: {fileID: 1522334804}
+  _damageImage: {fileID: 1522334804}
 --- !u!114 &1522334804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19520,7 +19520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d47d95ffd255794ea7e0d1ea18971c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageImage: {fileID: 1569699384}
+  _damageImage: {fileID: 1569699384}
 --- !u!114 &1569699384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20429,7 +20429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74200910647e1084a9e92c2af6e51655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 1955084146}
+  _spawnPosition: {fileID: 0}
   _player: {fileID: 1709332680}
 --- !u!65 &1644300066
 BoxCollider:
@@ -28317,6 +28317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076329894392869247, guid: 23b6f6688e73896479a3164eb832a798,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b6f6688e73896479a3164eb832a798, type: 3}

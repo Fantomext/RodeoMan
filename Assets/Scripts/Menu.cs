@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private GameObject MenuButton;
-    [SerializeField] private GameObject MenuWindow;
+    [SerializeField] private GameObject _menuButton;
+    [SerializeField] private GameObject _menuWindow;
 
     [SerializeField] private MonoBehaviour[] _comonentsToDisable;
 
@@ -19,8 +19,8 @@ public class Menu : MonoBehaviour
     }
     public void OpenMenuWindow()
     {
-        MenuWindow.SetActive(true);
-        MenuButton.SetActive(false);
+        _menuWindow.SetActive(true);
+        _menuButton.SetActive(false);
         for (int i = 0; i < _comonentsToDisable.Length; i++)
         {
             _comonentsToDisable[i].enabled = false;
@@ -31,8 +31,8 @@ public class Menu : MonoBehaviour
 
     public void CloseMenuWindow()
     {
-        MenuButton.SetActive(true);
-        MenuWindow.SetActive(false);
+        _menuButton.SetActive(true);
+        _menuWindow.SetActive(false);
         for (int i = 0; i < _comonentsToDisable.Length; i++)
         {
             _comonentsToDisable[i].enabled = true;
